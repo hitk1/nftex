@@ -3,8 +3,8 @@ use Mix.Config
 # Configure your database
 config :nftex, Nftex.Repo,
   username: "postgres",
-  password: "postgres",
-  database: "nftex_dev",
+  password: "rpi1234",
+  database: "nftex",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
