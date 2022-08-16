@@ -5,6 +5,14 @@ defmodule NftexWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api" do
+    pipe_through(:api)
+
+    forward "/graphql", Absinthe.Plug, schema: Nftex.Schema
+    # Graphql interativo
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Nftex.Schema
+  end
+
   scope "/api", NftexWeb do
     pipe_through :api
   end
