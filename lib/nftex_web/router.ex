@@ -8,9 +8,9 @@ defmodule NftexWeb.Router do
   scope "/api" do
     pipe_through(:api)
 
-    forward "/graphql", Absinthe.Plug, schema: Nftex.Schema
+    forward "/graphql", Absinthe.Plug, schema: NftexWeb.Schema
     # Graphql interativo
-    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: Nftex.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: NftexWeb.Schema
   end
 
   scope "/api", NftexWeb do
